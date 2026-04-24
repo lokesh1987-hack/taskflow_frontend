@@ -1,0 +1,99 @@
+.project-detail { display: flex; flex-direction: column; gap: 24px; }
+
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; color: var(--text-secondary);
+  text-decoration: none; font-weight: 500;
+  transition: color 0.15s; width: fit-content;
+}
+.back-link:hover { color: var(--text-primary); }
+
+/* Header */
+.detail-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+}
+.detail-header-left { display: flex; align-items: flex-start; gap: 14px; }
+.detail-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.detail-title { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+.detail-desc { font-size: 14px; color: var(--text-secondary); }
+.detail-actions { display: flex; gap: 4px; }
+
+/* Progress card */
+.detail-progress { padding: 20px 24px; }
+.dp-stats {
+  display: flex; align-items: center; gap: 0;
+  margin-bottom: 16px;
+}
+.dp-stat { flex: 1; text-align: center; }
+.dp-stat-value { display: block; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 2px; }
+.dp-stat-label { font-size: 12px; color: var(--text-muted); }
+.dp-divider { width: 1px; height: 40px; background: var(--border); }
+.dp-bar { height: 6px; background: var(--bg-hover); border-radius: 99px; overflow: hidden; }
+.dp-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+
+/* Toolbar */
+.todos-toolbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap;
+}
+.filter-tabs { display: flex; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 3px; gap: 2px; }
+.filter-tab {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 6px; border: none;
+  background: none; color: var(--text-secondary);
+  font-family: var(--font); font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.15s;
+}
+.filter-tab:hover { color: var(--text-primary); }
+.filter-tab.active { background: var(--bg-hover); color: var(--text-primary); }
+.filter-count {
+  font-size: 11px; background: var(--bg-hover);
+  padding: 1px 6px; border-radius: 99px; color: var(--text-muted);
+}
+.filter-tab.active .filter-count { background: var(--accent-dim); color: var(--accent); }
+
+/* Todos */
+.todos-list { display: flex; flex-direction: column; gap: 8px; }
+
+.todo-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px; transition: all 0.2s; position: relative;
+}
+.todo-item:hover { border-color: var(--border-hover); }
+.todo-item.completed { opacity: 0.6; }
+.todo-item.completed:hover { opacity: 0.8; }
+
+.todo-check {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid var(--border-hover);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px; cursor: pointer;
+  transition: all 0.15s; background: transparent;
+}
+.todo-check:hover { border-color: var(--accent); }
+.todo-check.checked { border-color: transparent; }
+
+.todo-body { flex: 1; min-width: 0; cursor: pointer; }
+.todo-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+.todo-title { font-size: 14px; font-weight: 500; flex: 1; min-width: 0; }
+.todo-item.completed .todo-title { text-decoration: line-through; color: var(--text-muted); }
+.todo-badges { display: flex; gap: 6px; flex-shrink: 0; }
+.todo-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; line-height: 1.4; }
+.todo-due {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 12px; color: var(--text-muted);
+}
+.todo-due.overdue { color: var(--red); }
+.todo-due.today { color: var(--yellow); }
+
+.todo-actions {
+  position: relative; display: flex; align-items: center;
+  flex-shrink: 0;
+}
+.todo-menu-btn { opacity: 0; transition: opacity 0.15s; }
+.todo-item:hover .todo-menu-btn { opacity: 1; }
+
+@media (max-width: 600px) {
+  .detail-title { font-size: 20px; }
+  .dp-stat-value { font-size: 18px; }
+}
